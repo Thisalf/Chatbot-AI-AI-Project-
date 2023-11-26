@@ -1,0 +1,124 @@
+{
+  "intents":[
+     {
+        "tag":"greeting",
+        "patterns":[
+           "Hi there",
+           "How are you",
+           "Is anyone there?",
+           "Hey",
+           "Hola",
+           "Hello",
+           "Good day"
+        ],
+        "responses":[
+           "Hello and welcome to the University of Jaffna Sports Club! How can I assist you with sports information or club activities?",
+           "Hey there! It's great to have you. Ready to dive into the exciting world of sports at the University of Jaffna?",
+           "Hi! Good day to you. Interested in learning more about our sports club or upcoming events?"
+        ],
+        "context":[
+           ""
+        ]
+     },
+     {
+        "tag":"goodbye",
+        "patterns":[
+           "Bye",
+           "See you later",
+           "Goodbye",
+           "Nice chatting to you, bye",
+           "Till next time"
+        ],
+        "responses":[
+           "See you later! If you have any more questions or need sports updates, feel free to return.",
+           "Goodbye! Wishing you a fantastic day. Don't hesitate to drop by again for sports news!",
+           "Till next time! If you ever want to catch up on the latest in University of Jaffna sports, I'll be here."
+        ],
+        "context":[
+           ""
+        ]
+     },
+     {
+        "tag":"thanks",
+        "patterns":[
+           "Thanks",
+           "Thank you",
+           "That's helpful",
+           "Awesome, thanks",
+           "Thanks for helping me"
+        ],
+        "responses":[
+           "No problem! If you ever have more questions or want to discuss sports at the University of Jaffna, I'm here.",
+           "You're welcome! Feel free to return anytime for updates on our exciting sports events and activities.",
+           "Glad I could assist! For the latest news and happenings in our sports club, don't hesitate to drop by again."
+        ],
+        "context":[
+           ""
+        ]
+     },
+     {
+        "tag":"noanswer",
+        "patterns":[   
+        ],
+        "responses":[
+           "Sorry, can't understand you",
+           "Please give me more info",
+           "Not sure I understand"
+        ],
+        "context":[
+           ""
+        ]
+     },
+     {
+        "tag":"sports_info",
+        "patterns":[
+           "Tell me about the sports offered",
+           "What are the available sports?",
+           "Give me information about specific sports",
+           "Can you tell me about sports facilities?"
+        ],
+        "responses":[
+           "We offer a variety of sports, including football, cricket, basketball, athletics, and more. You can get detailed information about each sport on our website or by contacting the sports club office.",
+           "Our sports club provides opportunities for a wide range of sports, catering to different interests. If you have a specific sport in mind, feel free to ask for more details!",
+           "The University of Jaffna Sports Club has top-notch facilities for various sports. Whether you're into team sports like football and basketball or individual sports like athletics, we've got you covered."
+        ],
+        "context":[
+           ""
+        ]
+     },
+     {
+        "tag":"events",
+        "patterns":[
+           "Are there any upcoming sports events?",
+           "Tell me about sports competitions",
+           "Any tournaments happening soon?",
+           "What events are scheduled?"
+        ],
+        "responses":[
+           "Yes, we have exciting sports events lined up! Check our website or contact the sports club office for the latest information on upcoming tournaments, competitions, and matches.",
+           "Stay tuned for upcoming sports competitions! We regularly organize events that showcase the talent and sportsmanship of our university athletes. Feel free to join in the excitement!",
+           "Our sports calendar is packed with thrilling events. Whether it's a football match, a cricket tournament, or an athletics competition, we have something for everyone. Keep an eye on our announcements for details."
+        ],
+        "context":[
+           ""
+        ]
+     },
+     {
+        "tag":"join_sports",
+        "patterns":[
+           "How can I join a sports team?",
+           "Tell me about joining a sports club",
+           "Can I participate in university sports?",
+           "What's the process for joining a sports team?"
+        ],
+        "responses":[
+           "Joining a sports team is a fantastic idea! You can express your interest by contacting the sports club office or attending our recruitment events. We welcome enthusiastic individuals to be part of our winning teams!",
+           "Absolutely! We encourage students to join our sports clubs and be part of the university's vibrant sports community. Feel free to reach out to the respective sports club coordinator for more details on joining.",
+           "Becoming a part of the University of Jaffna sports community is easy! Attend our recruitment sessions, speak to the team captains, and get involved. We look forward to having you on board!"
+        ],
+        "context":[
+           ""
+        ]
+     }
+  ]
+}
