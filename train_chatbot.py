@@ -1,5 +1,5 @@
 import nltk
-#nltk.download('wordnet')
+
 
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
@@ -13,93 +13,92 @@ from tensorflow.keras.layers import Dense, Activation, Dropout
 from tensorflow.keras.optimizers import SGD
 import random
 
-words=[]
+words = []
 classes = []
 documents = []
-ignore_words = ['?', '!']
+ignore_words = ['?', '!', 'the', 'is', 'and']
 data_file = open('intents.json').read()
 intents = json.loads(data_file)
 
-
 for intent in intents['intents']:
     for pattern in intent['patterns']:
-
-        #tokenize each word
+        # Tokenize each word
         w = nltk.word_tokenize(pattern)
         words.extend(w)
-        #add documents in the corpus
+        # Add documents in the corpus
         documents.append((w, intent['tag']))
-
-        # add to our classes list
+        # Add to our classes list
         if intent['tag'] not in classes:
             classes.append(intent['tag'])
 
-# lemmaztize and lower each word and remove duplicates
+# Lemmatize and lower each word and remove duplicates
 words = [lemmatizer.lemmatize(w.lower()) for w in words if w not in ignore_words]
 words = sorted(list(set(words)))
-# sort classes
+# Sort classes
 classes = sorted(list(set(classes)))
-# documents = combination between patterns and intents
-print (len(documents), "documents")
-# classes = intents
-print (len(classes), "classes", classes)
-# words = all words, vocabulary
-print (len(words), "unique lemmatized words", words)
+# Documents = combination between patterns and intents
+print(len(documents), "documents")
+# Classes = intents
+print(len(classes), "classes", classes)
+# Words = all words, vocabulary
+print(len(words), "unique lemmatized words", words)
 
+pickle.dump(words, open('words.pkl', 'wb'))
+pickle.dump(classes, open('classes.pkl', 'wb'))
 
-pickle.dump(words,open('words.pkl','wb'))
-pickle.dump(classes,open('classes.pkl','wb'))
-
-# create our training data
+# Create our training data
 training = []
-# create an empty array for our output
+# Create an empty array for our output
 output_empty = [0] * len(classes)
-# training set, bag of words for each sentence
+# Training set, bag of words for each sentence
 for doc in documents:
-    # initialize our bag of words
+    # Initialize our bag of words
     bag = []
-    # list of tokenized words for the pattern
+    # List of tokenized words for the pattern
     pattern_words = doc[0]
-    # lemmatize each word - create base word, in attempt to represent related words
+    # Lemmatize each word - create base word, in an attempt to represent related words
     pattern_words = [lemmatizer.lemmatize(word.lower()) for word in pattern_words]
-    # create our bag of words array with 1, if word match found in current pattern
+    # Create our bag of words array with 1, if word match found in the current pattern
     for w in words:
         bag.append(1) if w in pattern_words else bag.append(0)
-    
-    # output is a '0' for each tag and '1' for current tag (for each pattern)
+
+    # Output is a '0' for each tag and '1' for the current tag (for each pattern)
     output_row = list(output_empty)
     output_row[classes.index(doc[1])] = 1
-    
+
     training.append([bag, output_row])
 
-# shuffle our features and turn into np.array
+# Shuffle our features and turn into np.array
 random.shuffle(training)
 
 # Separate the bags and output_rows into separate lists
 bags = [item[0] for item in training]
 output_rows = [item[1] for item in training]
 
-# create train and test lists. X - patterns, Y - intents
+# Create train and test lists. X - patterns, Y - intents
 train_x = np.array(bags)
 train_y = np.array(output_rows)
 print("Training data created")
 
-
-# Create model - 3 layers. First layer 128 neurons, second layer 64 neurons and 3rd output layer contains number of neurons
-# equal to number of intents to predict output intent with softmax
+# Create model - 3 layers. First layer 128 neurons, second layer 64 neurons and 3rd output layer contains the number of neurons
+# equal to the number of intents to predict output intent with softmax
 model = Sequential()
 model.add(Dense(128, input_shape=(len(train_x[0]),), activation='relu'))
-model.add(Dropout(0.5))
 model.add(Dense(64, activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(len(train_y[0]), activation='softmax'))
 
+model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
+# Split data into training and validation sets
+validation_split = 0.1
+split_index = int(len(train_x) * (1 - validation_split))
 
-model.compile(loss='categorical_crossentropy',  metrics=['accuracy'])
-#fitting and saving the model 
+train_x, val_x = train_x[:split_index], train_x[split_index:]
+train_y, val_y = train_y[:split_index], train_y[split_index:]
 
-hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
+# Fitting and saving the model
+hist = model.fit(train_x, train_y, epochs=200, batch_size=5, validation_data=(val_x, val_y), verbose=1)
 model.save('chatbot_model.h5', hist)
 
-print("model created and saved")
+print("Model created and saved")

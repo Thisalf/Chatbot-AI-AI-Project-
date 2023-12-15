@@ -14,7 +14,7 @@ words = pickle.load(open('words.pkl', 'rb'))
 classes = pickle.load(open('classes.pkl', 'rb'))
 
 # Define ignore_words
-ignore_words = ['?', '!']
+ignore_words = ['?', '!', 'the', 'is', 'and']
 
 lemmatizer = WordNetLemmatizer()
 
@@ -81,7 +81,7 @@ base.geometry("400x500")
 base.resizable(width=FALSE, height=FALSE)
 
 # Create Chat window
-ChatLog = Text(base, bd=0, bg="white", height="8", width="50", font="Arial",)
+ChatLog = Text(base, bd=0, bg="white", height="15", width="70", font="Arial",)
 ChatLog.config(state=DISABLED)
 
 # Bind scrollbar to Chat window
@@ -94,7 +94,7 @@ SendButton = Button(base, font=("Verdana", 12, 'bold'), text="Send", width="12",
                     command=send)
 
 # Create the box to enter message
-EntryBox = Text(base, bd=0, bg="white", width="29", height="5", font="Arial")
+EntryBox = Text(base, bd=0, bg="white", width="35", height="5", font="Arial")
 
 # Place all components on the screen
 scrollbar.place(x=376, y=6, height=386)

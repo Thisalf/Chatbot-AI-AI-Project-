@@ -13,8 +13,8 @@
         ],
         "responses":[
            "Hello and welcome to the University of Jaffna Sports Club! How can I assist you with sports information or club activities?",
-           "Hey there! It's great to have you. Ready to dive into the exciting world of sports at the University of Jaffna?",
-           "Hi! Good day to you. Interested in learning more about our sports club or upcoming events?"
+           "Hey there! It's great to have you. Ready to dive into the exciting world of sports at the University of Jaffna.",
+           "Hi! Good day to you. How can I help to you?"
         ],
         "context":[
            ""
@@ -58,7 +58,12 @@
      },
      {
         "tag":"noanswer",
-        "patterns":[   
+        "patterns":[ 
+         "I don't know",
+         "Can you help me?",
+         "I'm not sure",
+         "What do you mean?",
+         "Sorry, I don't understand"  
         ],
         "responses":[
            "Sorry, can't understand you",
@@ -72,53 +77,396 @@
      {
         "tag":"sports_info",
         "patterns":[
-           "Tell me about the sports offered",
-           "What are the available sports?",
-           "Give me information about specific sports",
-           "Can you tell me about sports facilities?"
+          "Which sports can I participate in?",
+          "Tell me about the different sports teams",
+          "Any opportunities to join sports?",
+          "What kinds of sports are available?",
+          "Give me an overview of the sports programs",
+          "Can you list the sports clubs?",
+          "Details on sports and activities",
+          "Tell me about the sports offered in the club",
+          "I'm interested in joining a sports team, what are my options?",
+          "What sports events are organized?",
+          "Provide information on available sports",
+          "Which sports have competitive teams?",
+          "What are the popular sports in the sports club?",
+          "Tell me about recreational sports options"
         ],
         "responses":[
-           "We offer a variety of sports, including football, cricket, basketball, athletics, and more. You can get detailed information about each sport on our website or by contacting the sports club office.",
-           "Our sports club provides opportunities for a wide range of sports, catering to different interests. If you have a specific sport in mind, feel free to ask for more details!",
-           "The University of Jaffna Sports Club has top-notch facilities for various sports. Whether you're into team sports like football and basketball or individual sports like athletics, we've got you covered."
+           "These are the sports that the club      offers:\n\n1.Football.\n\n2.Cricket.\n\n3.Basketball.\n\n4.Volleyball.\n\n5.Badminton.\n\n6.Athletics/Track and Field.\n\n7.Tennis.\n\n6.Table Tennis.\n\n9.Swimming.\n\n10.Rugby.\n\n11.Hockey.\n\n12.Chess.\n\n13.Baseball/Softball.\n\n14.Golf.\n\n15.Karate/Martial Arts. "
         ],
         "context":[
            ""
         ]
      },
      {
-        "tag":"events",
-        "patterns":[
-           "Are there any upcoming sports events?",
-           "Tell me about sports competitions",
-           "Any tournaments happening soon?",
-           "What events are scheduled?"
-        ],
-        "responses":[
-           "Yes, we have exciting sports events lined up! Check our website or contact the sports club office for the latest information on upcoming tournaments, competitions, and matches.",
-           "Stay tuned for upcoming sports competitions! We regularly organize events that showcase the talent and sportsmanship of our university athletes. Feel free to join in the excitement!",
-           "Our sports calendar is packed with thrilling events. Whether it's a football match, a cricket tournament, or an athletics competition, we have something for everyone. Keep an eye on our announcements for details."
-        ],
-        "context":[
-           ""
-        ]
+      "tag": "upcoming_events",
+      "patterns": [
+         "Share details about upcoming sports events",
+         "Tell me about the next matches and tournaments",
+         "What's happening in the sports club soon?",
+         "Any upcoming sports events?",
+         "Are there any upcoming matches?",
+         "What sports events are scheduled?",
+         "Tell me about the upcoming tournaments",
+         "When is the next sports event?",
+         "Upcoming matches at the University of Jaffna?",
+         "Give me information on upcoming sports competitions",
+         "What's on the sports calendar?",
+         "Tell me about the next football match",
+         "Any tournaments happening soon?",
+         "When is the next basketball game?",
+         "Upcoming cricket matches?"
+      ],
+      "responses": [
+        "Absolutely! Here are some upcoming sports events:\n\n1. **Football Tournament:**\n   - Date: [13 DEC 2023]\n   - Venue: [At the University playgroud]\n   - Time: [Started at 9 am]\n\n2. **Basketball Match:**\n   - Date: [20 DEC 2023]\n   - Venue: [Basketball playgroud]\n   - Time: [Started at 8 am]\n\n3. **Cricket Championship:**\n   - Date: [24 DEC 2023]\n   - Venue: [At the University playgroud]\n   - Time: [Started at 8 am]\n\nFeel free to mark your calendar and join us for these exciting events! For any updates or changes, check our website or contact the sports club office."
+      ],
+      "context": [""]
      },
      {
-        "tag":"join_sports",
-        "patterns":[
-           "How can I join a sports team?",
-           "Tell me about joining a sports club",
-           "Can I participate in university sports?",
-           "What's the process for joining a sports team?"
-        ],
-        "responses":[
-           "Joining a sports team is a fantastic idea! You can express your interest by contacting the sports club office or attending our recruitment events. We welcome enthusiastic individuals to be part of our winning teams!",
-           "Absolutely! We encourage students to join our sports clubs and be part of the university's vibrant sports community. Feel free to reach out to the respective sports club coordinator for more details on joining.",
-           "Becoming a part of the University of Jaffna sports community is easy! Attend our recruitment sessions, speak to the team captains, and get involved. We look forward to having you on board!"
-        ],
-        "context":[
-           ""
-        ]
-     }
+      "tag": "join_sports",
+      "patterns": [
+         "How can I join a sports team?",
+         "Tell me about joining a sports club",
+         "Can I participate in university sports?",
+         "What's the process for joining a sports team?",
+         "How do I get a sports club membership?",
+         "What are the steps to become a club member?",
+         "Is there a way to join the sports club?",
+         "How can I become a member of the sports team?",
+         "What's the procedure for getting a sports club membership?"
+      ],
+      "responses": [
+        "Joining the University of Jaffna Sports Club is a simple process! Follow these steps to become a club member:\n\n1. **Registration Form:** Visit the sports  office and collect the registration form for   joining the sports club. \n\n2. Submit the filled form and make the       admission payment to the club supervisor. \n\n3. Review the sports club guidelines for a   clear understanding. \n\n4. Congratulations! You are now an official member of the University of Jaffna Sports   Club." 
+      ],
+      "context": [""]
+     },
+     {
+      "tag": "overview",
+      "patterns": [
+        "What can you do?",
+        "Tell me about your capabilities",
+        "Give me an overview",
+        "How can you assist me?"
+      ],
+      "responses": [
+        "Hello! I'm here to assist you with        information and support related to the          University of Jaffna Sports Club. Here are   some things I can help you with:\n\n1. Provide details about the sports offered  by the club.\n2. Share information about upcoming sports events and tournaments.\n3. Assist you in joining sports teams or the sports club.\n4. Offer information about sports facilities  and training schedules.\n5. Keep you updated with the latest sports news and achievements.\n\nFeel free to ask me anything related to the sports club, and I'll do my best to assist     you!"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "football_rules",
+      "patterns": [
+        "Tell me about the rules for football",
+        "What are the regulations for playing football?",
+        "Explain the football game rules"
+      ],
+      "responses": [
+        "In football, the basic rules include:\n1. The game is played between two teams of 11 players each.\n2. The objective is to score goals by getting the ball into the opposing team's net.\n3. Players cannot use their hands (except for the goalkeeper within the penalty area).\n4. Offsides, fouls, and other regulations ensure fair play.\nFor more detailed rules, consult the official football rulebook or speak to the football coach."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "football_facilities",
+      "patterns": [
+        "What facilities are available for playing football?",
+        "Tell me about the football facilities",
+        "Describe the amenities for football"
+      ],
+      "responses": [
+        "The football facilities include:\n1. Well-maintained football fields with goalposts.\n2. Changing rooms and locker facilities for players.\n3. Spectator seating areas for fans.\n4. Proper lighting for evening matches.\n5. Training equipment such as balls, cones, and goal nets.\nFor specific information on football facilities, contact the sports club office or the football team coordinator."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "basketball_rules",
+      "patterns": [
+        "Tell me about the rules for basketball",
+        "What are the regulations for playing basketball?",
+        "Explain the basketball game rules"
+      ],
+      "responses": [
+        "In basketball, key rules include:\n1. Two teams of five players each compete to score points by shooting the ball through the opponent's basket.\n2. Players cannot run holding the ball; they must dribble.\n3. Points are scored for successful shots from different areas of the court.\n4. Fouls and violations are enforced to maintain fair play.\nFor a comprehensive understanding, refer to the official basketball rulebook or consult the basketball coach."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "basketball_facilities",
+      "patterns": [
+        "What facilities are available for playing basketball?",
+        "Tell me about the basketball facilities",
+        "Describe the amenities for basketball"
+      ],
+      "responses": [
+        "Basketball facilities include:\n1. Indoor or outdoor courts with proper markings.\n2. Hoops and backboards at regulation height.\n3. Seating areas for spectators and fans.\n4. Scoreboards and shot clocks for official matches.\n5. Access to training equipment like basketballs and training cones.\nFor specific details on basketball facilities, contact the sports club office or the basketball team coordinator."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "tennis_rules",
+      "patterns": [
+        "Tell me about the rules for tennis",
+        "What are the regulations for playing tennis?",
+        "Explain the tennis game rules"
+      ],
+      "responses": [
+        "Tennis rules include:\n1. A match is played between two players (singles) or four players (doubles).\n2. Points are scored with each exchange of the ball.\n3. The server must follow specific rules, and points are counted in a unique manner.\n4. The game has specific scoring terms such as 'love,' '15,' '30,' '40,' and 'game.'\nFor detailed rules, consult the official tennis rulebook or speak to the tennis coach."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "tennis_facilities",
+      "patterns": [
+        "What facilities are available for playing tennis?",
+        "Tell me about the tennis facilities",
+        "Describe the amenities for tennis"
+      ],
+      "responses": [
+        "Tennis facilities include:\n1. Well-maintained tennis courts with proper lines and nets.\n2. Seating areas for players and spectators.\n3. Access to tennis rackets and balls for practice and matches.\n4. Lighting for evening play.\n5. Changing rooms and restroom facilities.\nFor specific information on tennis facilities, contact the sports club office or the tennis team coordinator."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "golf_rules",
+      "patterns": [
+        "Tell me about the rules for golf",
+        "What are the regulations for playing golf?",
+        "Explain the golf game rules"
+      ],
+      "responses": [
+        "Golf rules include:\n1. Players aim to complete each hole in the fewest strokes possible.\n2. Each round consists of 18 holes with different pars.\n3. Specific rules govern ball placement, strokes, and penalties.\n4. Etiquette and sportsmanship are integral to the game.\nFor a detailed understanding, refer to the official golf rulebook or consult the golf coach."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "golf_facilities",
+      "patterns": [
+        "What facilities are available for playing golf?",
+        "Tell me about the golf facilities",
+        "Describe the amenities for golf"
+      ],
+      "responses": [
+        "Golf facilities include:\n1. Well-maintained golf courses with 18 holes.\n2. Tee boxes, fairways, and putting greens.\n3. Golf carts for transportation between holes.\n4. Clubhouses with pro shops and dining areas.\n5. Access to golf clubs and balls for practice and matches.\nFor specific details on golf facilities, contact the sports club office or the golf team coordinator."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "hockey_rules",
+      "patterns": [
+        "Tell me about the rules for hockey",
+        "What are the regulations for playing hockey?",
+        "Explain the hockey game rules"
+      ],
+      "responses": [
+        "Hockey rules include:\n1. Two teams compete to score goals using a small, hard ball.\n2. Players use sticks to pass, dribble, and shoot the ball.\n3. Specific rules govern penalties, goalkeeping, and player conduct.\n4. Matches are played in periods, and the team with the most goals wins.\nFor a comprehensive understanding, refer to the official hockey rulebook or consult the hockey coach."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "hockey_facilities",
+      "patterns": [
+        "What facilities are available for playing hockey?",
+        "Tell me about the hockey facilities",
+        "Describe the amenities for hockey"
+      ],
+      "responses": [
+        "Hockey facilities include:\n1. Hockey fields with proper markings.\n2. Goals and goalposts at regulation size.\n3. Seating areas for players and spectators.\n4. Access to hockey sticks, balls, and protective gear.\n5. Lighting for evening matches.\nFor specific details on hockey facilities, contact the sports club office or the hockey team coordinator."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "chess_rules",
+      "patterns": [
+        "Tell me about the rules for chess",
+        "What are the regulations for playing chess?",
+        "Explain the chess game rules"
+      ],
+      "responses": [
+        "Chess rules include:\n1. The game is played on an 8x8 board with different pieces.\n2. Each player starts with 16 pieces, including a king, queen, and various others.\n3. Players take turns moving pieces according to specific rules.\n4. The objective is to checkmate the opponent's king.\nFor detailed rules, refer to the official chess rulebook or consult the chess coach."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "chess_facilities",
+      "patterns": [
+        "What facilities are available for playing chess?",
+        "Tell me about the chess facilities",
+        "Describe the amenities for chess"
+      ],
+      "responses": [
+        "Chess facilities include:\n1. Chessboards and pieces for practice and matches.\n2. Seating areas for players and spectators.\n3. Quiet and conducive environments for concentration.\n4. Clocks for timed chess matches.\n5. Access to chess literature and learning resources.\nFor specific details on chess facilities, contact the sports club office or the chess team coordinator."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "baseball_rules",
+      "patterns": [
+        "Tell me about the rules for baseball",
+        "What are the regulations for playing baseball?",
+        "Explain the baseball game rules"
+      ],
+      "responses": [
+        "Baseball rules include:\n1. Two teams take turns batting and fielding.\n2. Batters aim to hit pitched balls and run bases.\n3. Fielding teams try to prevent runs and make outs.\n4. Specific rules govern pitching, fielding positions, and game duration.\nFor a detailed understanding, refer to the official baseball rulebook or consult the baseball coach."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "baseball_facilities",
+      "patterns": [
+        "What facilities are available for playing baseball?",
+        "Tell me about the baseball facilities",
+        "Describe the amenities for baseball"
+      ],
+      "responses": [
+        "Baseball facilities include:\n1. Baseball diamonds with bases and pitching mounds.\n2. Dugouts for teams and seating areas for spectators.\n3. Scoreboards for official matches.\n4. Access to baseball bats, balls, and catcher's gear.\n5. Lighting for evening games.\nFor specific details on baseball facilities, contact the sports club office or the baseball team coordinator."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "karate_rules",
+      "patterns": [
+        "Tell me about the rules for karate",
+        "What are the regulations for practicing karate?",
+        "Explain the karate competition rules"
+      ],
+      "responses": [
+        "Karate rules include:\n1. Participants perform choreographed sequences of movements (katas).\n2. Sparring matches involve controlled strikes and kicks for points.\n3. Respect and discipline are core principles.\n4. Different styles may have specific rule variations.\nFor a comprehensive understanding, refer to the official karate rulebook or consult the karate instructor."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "karate_facilities",
+      "patterns": [
+        "What facilities are available for practicing karate?",
+        "Tell me about the karate facilities",
+        "Describe the amenities for karate"
+      ],
+      "responses": [
+        "Karate facilities include:\n1. Dedicated training areas with mats.\n2. Equipment for practicing katas and forms.\n3. Safety gear for sparring and training.\n4. Seating areas for spectators.\n5. Access to experienced instructors and training resources.\nFor specific details on karate facilities, contact the sports club office or the karate instructor."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "cricket_rules",
+      "patterns": [
+        "What are the rules of cricket?",
+        "Explain cricket rules to me",
+        "Can you tell me about the rules of cricket?",
+        "How does cricket work?",
+        "Tell me the basic rules of cricket",
+        "Cricket rules",
+        "Rules for playing cricket",
+        "Cricket game regulations",
+        "How are runs scored in cricket?",
+        "What is LBW in cricket?",
+        "Tell me about cricket dismissals",
+        "Explain the concept of overs in cricket",
+        "What are the powerplays in cricket?",
+        "Cricket fielding positions",
+        "Difference between test and T20 cricket rules"
+      ],
+      "responses": [
+        "Cricket is a fascinating sport with a set of rules governing its gameplay. Here are some basic cricket rules:\n\n1. **Scoring Runs:**\n   - Runs are scored by hitting the ball and running between wickets.\n\n2. **Wickets and Dismissals:**\n   - The batting team aims to protect wickets, and the bowling team tries to dismiss batsmen through various means.\n\n3. **Overs:**\n   - The game is divided into overs, with each over consisting of six deliveries.\n\n4. **Fielding Positions:**\n   - Fielders are strategically placed on the field, including positions like slips, gully, and covers.\n\n5. **Extras:**\n   - Runs awarded for no-balls, wides, and other rule violations.\n\nThese are just a few key rules. If you have specific questions or want more details, feel free to ask!"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "cricket_facilities",
+      "patterns": [
+        "Tell me about cricket facilities",
+        "What cricket facilities are available?",
+        "Can you provide information about cricket infrastructure?",
+        "Give me details about cricket grounds",
+        "Where can I access cricket facilities?"
+      ],
+      "responses": [
+        "Our cricket facilities at the University of Jaffna are designed to meet the needs of cricket enthusiasts. Here's an overview:\n\n1. **Cricket Ground:**\n   - We have a dedicated cricket ground equipped with proper pitches, outfield, and facilities for practice and matches.\n\n2. **Nets and Practice Areas:**\n   - Practice your batting and bowling skills in our well-maintained cricket nets and practice areas.\n\n3. **Equipment Availability:**\n   - Access to cricket equipment such as bats, balls, stumps, and protective gear is available for practice sessions.\n\n4. **Coaching Facilities:**\n   - Take advantage of coaching sessions conducted by experienced coaches to enhance your cricket skills.\n\n5. **Tournaments and Matches:**\n   - Participate in inter-university tournaments and matches hosted at our cricket facilities.\n\nFor more specific details or to inquire about availability, feel free to contact the sports club office or visit our website."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "register_events",
+      "patterns": [
+        "Allow users to express interest or register for events",
+        "How can I register for upcoming events?",
+        "Tell me the process for expressing interest in events",
+        "Is there a way to sign up for sports events?",
+        "Can I register for upcoming matches?",
+        "How do I express interest in sports tournaments?"
+      ],
+      "responses": [
+        "Absolutely! Expressing interest or registering for events is easy. Follow these steps:\n\n1. **Visit the Sports Club Website:**\n   Go to our official website where you can find information about upcoming events and registration details.\n\n2. **Explore Upcoming Events:**\n   Browse the events section to see a list of upcoming matches, tournaments, and competitions.\n\n3. **Select the Event:**\n   Choose the event you are interested in participating in or attending.\n\n4. **Find Registration Information:**\n   Look for registration details, which may include a registration form, deadlines, and contact information.\n\n5. **Submit Registration Form:**\n   If required, fill out the registration form with your details and submit it by the specified deadline.\n\n6. **Confirmation:**\n   Once registered, you may receive a confirmation email or further instructions.\n\nFeel free to express your interest in any of our exciting events! For specific details, visit our website or contact the sports club office."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "membership_benefits",
+      "patterns": [
+        "Offer details about club membership benefits",
+        "What are the benefits of joining the sports club?",
+        "Tell me about club membership perks",
+        "What advantages come with joining the sports club?",
+        "Explain the benefits of becoming a club member"
+      ],
+      "responses": [
+        "Joining the University of Jaffna Sports Club comes with a range of exciting benefits:\n\n1. **Access to Premium Facilities:**\n   Club members enjoy exclusive access to top-notch sports facilities, including well-maintained fields, courts, and training areas.\n\n2. **Priority Participation in Events:**\n   Members get priority registration and participation in club events, tournaments, and matches.\n\n3. **Specialized Training Programs:**\n   Take advantage of specialized training programs and coaching sessions tailored for club members.\n\n4. **Club Merchandise Discounts:**\n   Enjoy discounts on sports club merchandise, including jerseys, equipment, and accessories.\n\n5. **Networking Opportunities:**\n   Connect with fellow sports enthusiasts, athletes, and professionals through club events and networking opportunities.\n\n6. **Regular Updates:**\n   Stay informed with regular updates on upcoming events, matches, and exclusive club news.\n\nReady to experience these fantastic benefits? Join our sports club and become a valued member of our vibrant community!"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "facility_guidelines",
+      "patterns": [
+         "Provide guidelines for facility usage",
+         "What are the rules for using sports facilities?",
+         "Can you share the facility usage guidelines?",
+         "Tell me about the guidelines for using club facilities",
+         "What are the rules for using the sports fields?",
+         "Give me information on using the club's facilities",
+         "How should I use the sports facilities?",
+         "Are there any guidelines for facility usage?",
+         "Tell me about the rules and regulations for using club facilities",
+         "What do I need to know about using the sports club's facilities?",
+         "Can you explain the guidelines for using the gym?",
+         "What are the dos and don'ts for sports facility usage?"
+      ],
+      "responses": [
+        "Using our sports facilities is a fantastic opportunity. Here are the guidelines for facility usage:\n\n1. **Membership Requirement:**\n   Ensure you have a valid sports club membership to access facilities.\n\n2. **Booking System:**\n   For specific facilities, use our online booking system to reserve your time slot.\n\n3. **Respect Timings:**\n   Adhere to the designated operating hours for each facility. Respect the time and space of fellow users.\n\n4. **Equipment Responsibility:**\n   Treat the sports equipment with care. Report any damages promptly.\n\n5. **Cleanliness:**\n   Keep the facilities clean and tidy. Dispose of trash in designated bins.\n\n6. **Safety First:**\n   Prioritize safety. Follow all safety guidelines and report any hazards immediately.\n\n7. **Guest Policies:**\n   If bringing guests, familiarize them with the facility rules and ensure they comply.\n\nRemember, adherence to these guidelines ensures a positive experience for all users. Enjoy your time at our sports facilities!"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "sports_news",
+      "patterns": [
+        "Sports news and updates",
+        "Tell me the latest sports news",
+        "What's happening in the sports world?",
+        "Give me updates on sports events",
+        "Any recent sports highlights?"
+      ],
+      "responses": [
+        "Stay in the loop with the latest sports news and updates:\n\n1. **Football:**\n   - The University of Jaffna football team secured a thrilling victory in the recent match against CSA Team\n\n2. **Cricket:**\n   -  University of Jaffna cricket team achieved a convincing victory against WCK.\n\n\n3."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "chatbot_identity",
+      "patterns": [
+        "What are you?",
+        "Who are you?",
+        "Can you tell me about yourself?",
+        "Are you a human or a machine?",
+        "Explain your purpose"
+      ],
+      "responses": [
+        "I am a chatbot created to assist and provide information. My purpose is to help answer your questions and engage in conversations on various topics. If you have any specific inquiries or need assistance, feel free to ask!",
+        "I'm a chatbot designed to assist you. Think of me as a virtual assistant here to help answer your queries, provide information, and engage in conversations. How may I assist you today?",
+        "I'm an AI-powered chatbot. My main role is to assist you by answering questions and providing information. If you have any queries or topics you'd like to discuss, feel free to let me know!",
+        "I'm not a human, but rather an artificial intelligence chatbot. My purpose is to assist you with information and answer your questions to the best of my abilities. How can I assist you today?",
+        "I am a chatbot, a computer program designed to interact with users and provide information. If there's anything specific you'd like to know or discuss, feel free to ask!"
+      ],
+      "context": [""]
+    }
+    
+           
   ]
 }
